@@ -11,7 +11,6 @@ enum class TargetSnap { None = 0, Top, Bottom, Left, Right };
 enum class ScenarioMode { StationaryGround = 0, StationaryAerial, MovingPack, CocoDrop, AllRandom };
 enum class CocoDistance { Close = 0, Middle, Far, Random };
 enum class CocoDeliveryMode { VerticalDrop = 0, AerialToCar, RollToCar };
-enum class ShotDifficulty { Any = 0, Easy, Medium, Hard };
 
 class CustomAimTrainer : public BakkesMod::Plugin::BakkesModPlugin, public SettingsWindowBase
 {
@@ -56,14 +55,14 @@ public:
     float requiredMinHitKph = 0.0f;
     float requiredMaxHitKph = 200.0f;
 
-    // Shot Difficulty
-    ShotDifficulty shotDifficulty = ShotDifficulty::Any;
-
-    // Category Toggles (Shot Pack Merging)
+    // 7 Category Toggles (Shot Pack Merging)
     bool enableRedirects = true;
     bool enableCrosses = true;
     bool enableClearingPops = true;
     bool enableBackboardReads = true;
+    bool enableCatchAndDribble = true;
+    bool enableRollingStrike = true;
+    bool enableLoftedAerial = true;
 
     // Coco Specific Configuration
     CocoDistance cocoDistance = CocoDistance::Middle;
@@ -81,7 +80,7 @@ public:
     float ballHeightMax = 500.0f;
 
     // General Initial Velocity (KPH)
-    float minKph = 35.0f;
+    float minKph = 45.0f;
     float maxKph = 85.0f;
 
     // Rules
