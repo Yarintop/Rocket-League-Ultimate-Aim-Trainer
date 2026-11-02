@@ -11,6 +11,7 @@ obj/
 *.pdb
 *.ilk
 *.exp
+build-command.md
 
 # Output binaries
 plugins/
